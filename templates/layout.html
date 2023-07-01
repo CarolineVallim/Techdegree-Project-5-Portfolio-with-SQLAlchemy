@@ -10,12 +10,11 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="stylesheet" href="/static/styles.css">
     </head>
-
     <body>
         <section class="navigation">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Student Name</a>
+                    <a class="navbar-brand" href="{{url_for("index")}}">Caroline Vallim</a>
                     <button class="toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-bars"></i>
                     </button>
@@ -25,7 +24,7 @@
                                 <a class="nav-link active" aria-current="page" href="{{url_for("index")}}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#about">About</a>
+                                <a class="nav-link" href="{{url_for("about")}}">About</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#skills">Skills</a>
@@ -51,27 +50,17 @@
                 </div>
             </nav>
         </section>
-        {%block content%}
-
-        {%endblock%}
+        {% block content %}
+        {% endblock %}
         <section class="footer">
             <div class="socials">
                 <!--Delete any you don't use-->
                 <!--Icons from FontAwesome.com/icons-->
-                <a href="">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="">
+                <a href="https://github.com/CarolineVallim">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="">
+                <a href="https://www.linkedin.com/in/carolinecvallim/">
                     <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="">
-                    <i class="fab fa-tiktok"></i>
                 </a>
             </div>
             <div class="treehouse">

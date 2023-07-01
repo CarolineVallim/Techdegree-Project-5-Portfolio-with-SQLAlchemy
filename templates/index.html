@@ -8,13 +8,9 @@
     </section>
     <section id="about">
         <h2>About Me</h2>
-        <p>
-            Pastry wafer chocolate cake caramels. 
-            Gummi bears pudding sugar plum macaroon. 
-            Cake tart apple pie soufflé sweet sweet. 
-            Topping bear claw lemon drops gingerbread 
-            biscuit pudding fruitcake icing chocolate bar.
-        </p>
+        <p>I'm currently learning Python</p>
+        <p>I'm doing a Techdegree in Python Development at Treehouse</p>
+        <p>I intend to learn more about Data Analysis</p>
         <div id="triangle1"></div>
         <div id="triangle2"></div>
     </section>
@@ -36,16 +32,16 @@
         <div id="project-list">
             {% for project in projects %}
                 <div id="project1" class="a-project">
-                    <h3>{{ project.title }}</h3>
+                    <h3>{{project.title}}</h3>
                     <a href="{{ project.github }}" class="github-btn">
                         <i class="fab fa-github"></i>
                         View on GitHub
                     </a>
                     <p>
-                        {{ project.description }}
+                        {{project.description}}
                     </p>
                     <p>
-                        Skills: {{ project.skills }} 
+                        Skills: {{project.skills}} 
                     </p>
                 </div>
             {% endfor %}
@@ -54,14 +50,11 @@
         <i class="fas fa-paper-plane"></i>
         <h2>Contact Me</h2>
         <p>
-            Pastry wafer chocolate cake caramels. 
-            Gummi bears pudding sugar plum macaroon. 
-            Cake tart apple pie soufflé sweet sweet. 
-            Topping bear claw lemon drops gingerbread biscuit pudding fruitcake icing chocolate bar.
+            You can see my progress and more information on my GitHub account and Linkedin
         </p>
         <p>
             <i class="fas fa-envelope"></i>
-            my_email@email.com
+            carolinecvallim@gmail.com
         </p>
     </section>
 {% endblock %}
