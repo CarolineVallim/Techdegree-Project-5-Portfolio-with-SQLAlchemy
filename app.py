@@ -7,14 +7,16 @@ from datetime import datetime
 @app.route("/")
 def index():
     projects = Project.query.all()
-    return render_template("index.html", projects = projects)
+    return render_template("index.html", projects=projects)
 
 
 # Create a route for id project
 @app.route("/project/<id>")
 def project(id):
+    projects = Project.query.all()
     project = Project.query.get_or_404(id)
-    return render_template("detail.html", project = project)
+    skills = project.skills.split(", ")
+    return render_template("detail.html", project=project, skills=skills, projects=projects)
 
 
 # Create a route for add a new project
@@ -46,7 +48,7 @@ def edit_project(id):
         project.github = request.form["github"]
         db.session.commit()
         return redirect(url_for("index"))
-    return render_template("edit.html", project = project)
+    return render_template("edit.html", project=project)
 
 
 # Create a route for delete a project
@@ -68,7 +70,7 @@ def page_not_found(error):
 @app.route("/about")
 def about():
     projects = Project.query.all()
-    return render_template("about.html", projects = projects)
+    return render_template("about.html", projects=projects)
 
 
 # Create a dunder main function for th

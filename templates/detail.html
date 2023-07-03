@@ -9,9 +9,11 @@
             View on GitHub
         </a>
         <ul class="project-skills">
-            <div>
-                <li>{{project.skills}}</li>
-            </div>
+            {% for skill in skills %}
+                <div>
+                    <li>{{skill}}</li>
+                </div>
+            {% endfor %}
         </ul>
     </section>
     <section id="project-desc">
