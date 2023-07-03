@@ -67,10 +67,11 @@ def page_not_found(error):
 # Create a about route
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    projects = Project.query.all()
+    return render_template("about.html", projects = projects)
 
 
-# Create a dunder main function for the application
+# Create a dunder main function for th
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
