@@ -39,6 +39,7 @@ def new_project():
 # Create a route for edit a project
 @app.route("/project/<id>/edit", methods=["GET", "POST"])
 def edit_project(id):
+    projects = Project.query.all()
     project = Project.query.get_or_404(id)
     if request.form:
         project.title = request.form["title"]
@@ -48,7 +49,7 @@ def edit_project(id):
         project.github = request.form["github"]
         db.session.commit()
         return redirect(url_for("index"))
-    return render_template("edit.html", project=project)
+    return render_template("edit.html", project=project, projects=projects)
 
 
 # Create a route for delete a project
